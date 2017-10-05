@@ -1,0 +1,60 @@
+
+<html class="pozadina">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link media="screen and (max-width: 450px)" href="../css/mobitel.css" rel="stylesheet" type="text/css"/>
+    <link media="all and (min-width: 450px) and (max-width: 800px)" href="../css/tableti.css" rel="stylesheet" type="text/css"/>
+    <link media="all and (min-width: 800px) and (max-width: 1400px)" href="../css/glavna.css" rel="stylesheet" type="text/css"/>
+    <link media="all and (min-width: 1400px)" href="../css/tv.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+<body>
+            <div  >
+                <p class="naslov" >Završni rad</p>
+            <h4 class="prijavljeni"> </h4><h3> </br> </h3>
+        </div>
+    <ul><li><a href="../PHP/index.php">Home</a></li></ul>
+
+   
+    <div class="doku"><h1>Opis Završnog rada</h1>
+    </div>
+    <div class="doku">
+    <p>
+        Primjer baze podataka napravljen je na lokalnoj Oracle 12c bazi podataka. Baza je konstruirana tako da pohranjuje i dostavlja podatke web aplikacije koja se pokreće na lokalnom Apache serveru. Kako bi se prikazalo korištenje baze podataka na nekom realnom primjeru načinjena je  aplikacija za pregled kino projekcija na raznim lokacijama. Aplikacija prepoznaje četiri različita korisnika neregistrirani, registrirani korisnik, moderator te Administrator. Ovisno o tome jeste li prijavljeni na sustav i kako ste se prijavili imate i mobućnosti pregleda lokacij, pregleda projekcija na određenim lokacijama, rezervaciju projekcija, lajkanje projekcija itd. U koliko se prijavite kao moderator možete dodavati projekcije na lokaciju na kojoj ste moderator te možete prihvaćati ili odbijati rezervacije korisnicima te imamte uvid u statistiku lajkova. Administrator može dodatno još dodavati lokacije, dodjeljivati moderatora lokaciji, blokirati korisnika te ima pregled dnevnika. Kao neregistrirani korisnik ne možete rezervirati projekcije ni lajkati možete pregledati lokacije i projekcije na njima te otvoriti dokumentaciju aplikacije i vidjeti podatke o autoru. Slika 1. prikazuje dijagram slučajeva korištenja (eng. use case diagram).
+    </p>
+    <img src="../slike/Use Case.png">
+    <p>Slika 1. Dijagram slučajeva korištenja</p>
+    </div>
+    <div class="doku">
+    <p>
+        „ERA  dijagram je vrsta dijagrama koji se obično crta na samom početku izgradnje baze podataka, a koji omogućuje da se prikažu korisnički zahtjevi, odnosno definira struktura podataka u bazi. Iako postojeneje razlike u dostupnim alatima za modeliranje (tu se prvenstveno misli na notaciju kod crtanja dijagrama), ERA dijagram (obično) sadrži entitete, atribute i veze. Sam ERA dijagram je predstavio P. Chen 1976. godine. Danas je popularan i dijagram klasa (UML dijagram) koji se razvio iz ERA dijagrama, kao i neke druge tehnike i notacije (IDEF1X, ORM itd.).“  ERA dijagram prikaz ove baze podataka koja se sastoji od 11 entiteta tj. tablica: 
+        <br>•	Clan<br>
+•	Rezervacije<br>
+•	Tip korisika<br>
+•	Projekcije<br>
+•	Moderator lokacije<br>
+•	Dnevnik<br>
+•	Film<br>
+•	Zanrovi<br>
+•	Lokacije<br>
+•	Lajkovi<br>
+•	Države<br>
+Tabica Clan se sastoji od 10 atributa, korisnik popunjava skoro cijelu tablicu Clan prilikom registracije putem aplikacije. Atribute greska_prijava i statu korisnik izravno ne popunjava nego se u te atribute upisuju zadane vrijednosti koje se naknadno mijenjaju ovisno o tome koliko je puta korisnik pogriješio lozinku prilikom prijave u sustav. Tablica Clan je vanjskim ključem povezana sa tablicom Tip_korisnika koja se sastovi od dva atribuda primarnog ključa tablice te naziva tipa korisnika, kako aplikacija prepoznaje 4 tipa korisnika admin, moderator, registrirani i neregistrirani korisnik. Moderator_lokacije je slabi entitet koji u sebi sadrži jedan primarni ključ te dva vanjska ključa sa kojiuma je povezan sa tablicama Lokacije i Clan. Svrka ovog entitea je dodjeljivane određene lokacije moderatoru, jer jedan moderator može imati više lokacija i lokacija može imati više moderatora. U tablicu Lokacije se upisuje adresa kolacije kao i vanjski ključ koji je povezan sa tablicom Države. U koliko korisnik rezervira neku projekciju i moderator mu odobri rezervaciju podaci o vremenu rezervacije, broju zatraženih mjesta za određenu projekciju od kojeg člana će se zapisati u tablicu Rezervacije. Entitet Projekcije osim što u sebi sadrži vrijeme početka i završetka projekcije i maksimalni broj sjedećih mjesta, sadrži i dva vanjska ključa na tablice Lokacije i Film. Tablica Film je vanjskim ključem povezanan sa tablicom Zanrovi te sadrži atribute koji pisuju trajanje filna, naziv redatelja i sami naziv filma. Zanrovi je tablica koja sadrži jedinstveni primarni ključ i naziv filma. Tablica Dnevnik  pohranjuje sve važnije radnje nad aplikacijemoj i u tablicu član zapisuje tko je kada napravio određenu akciju npr. Odjava sa sustava, rezervacija projekcije itd. Slika 2. prikazuje ERA dijagram baze podataka.
+
+    </p>
+    <img src="../slike/ERA model.png">
+    <p>Slika 2. ERA dijagram</p>
+    </div>
+
+<footer>
+        
+        <h3> Stjepan Musa, WebDip - 2016 </h3>
+        <a href="mailto:smusa@foi.hr">e-mail : Stjepan Musa</a>
+        
+        
+    </footer>    
+</body>    
+</html>
